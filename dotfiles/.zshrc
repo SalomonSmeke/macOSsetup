@@ -85,4 +85,3 @@ source $ZSH/oh-my-zsh.sh
 
 echo "Hello, Salomon"
 eval $(thefuck --alias)
-fpath=(/usr/local/share/zsh-completions /Users/Salomon/.oh-my-zsh/plugins/wd /Users/Salomon/.oh-my-zsh/plugins/git /Users/Salomon/.oh-my-zsh/functions /Users/Salomon/.oh-my-zsh/completions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.0.8/functions)
