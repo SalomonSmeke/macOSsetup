@@ -8,8 +8,7 @@ sudo pmset -a sms 0; # Disable the sudden motion sensor as it’s not useful for
 sudo nvram SystemAudioVolume=" ";
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false;
 defaults write -g AppleAquaColorVariant -int 6; #Graphite colors
-defaults write /Library/Preferences/.GlobalPreferences AppleLocale "en_MX@currency=USD"; #Correct locale
-defaults write ~/Library/Preferences/.GlobalPreferences AppleLocale "en_MX@currency=USD";
+defaults write ~/Library/Preferences/.GlobalPreferences AppleLocale "en_MX@currency=USD"; #Correct locale
 defaults write ~/Library/Preferences/.GlobalPreferences AppleFirstWeekday "{gregorian=2;}"; #Set week start
 defaults write ~/Library/Preferences/.GlobalPreferences AppleHighlightColor "1.000000 0.493272 0.473998"; #Set highlight
 defaults write com.apple.systempreferences AppleOtherHighlightColor "1.000000 0.493272 0.473998";
@@ -143,7 +142,7 @@ PROD=$(softwareupdate -l |
   head -n 1 | awk -F"*" '{print $2}' |
   sed -e 's/^ *//' |
   tr -d '\n')
-softwareupdate -i "$PROD" -v;
+softwareupdate -i "$PROD";
 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)";
 
