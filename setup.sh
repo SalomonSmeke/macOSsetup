@@ -8,23 +8,23 @@ sudo pmset -a sms 0; # Disable the sudden motion sensor as it’s not useful for
 sudo nvram SystemAudioVolume=" ";
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false;
 defaults write -g AppleAquaColorVariant -int 6; #Graphite colors
-defaults write ~/Library/Preferences/.GlobalPreferences AppleLocale "en_MX@currency=USD"; #Correct locale
-defaults write ~/Library/Preferences/.GlobalPreferences AppleFirstWeekday "{gregorian=2;}"; #Set week start
-defaults write ~/Library/Preferences/.GlobalPreferences AppleHighlightColor "1.000000 0.493272 0.473998"; #Set highlight
+defaults write -g ~/Library/Preferences/.GlobalPreferences AppleLocale "en_MX@currency=USD"; #Correct locale
+defaults write -g ~/Library/Preferences/.GlobalPreferences AppleFirstWeekday "{gregorian=2;}"; #Set week start
+defaults write -g ~/Library/Preferences/.GlobalPreferences AppleHighlightColor "1.000000 0.493272 0.473998"; #Set highlight
 defaults write com.apple.systempreferences AppleOtherHighlightColor "1.000000 0.493272 0.473998";
-defaults write ~/Library/Preferences/.GlobalPreferences AppleICUDateFormatStrings '{3 = "MMMM dd, y";}'; #Set date fmt
-defaults write ~/Library/Preferences/.GlobalPreferences AppleICUForce24HourTime -bool YES; #Set 24 hr time
-defaults write ~/Library/Preferences/.GlobalPreferences AppleLanguages "(en, es)"; #Set languages
-defaults write ~/Library/Preferences/.GlobalPreferences AppleMeasurementUnits Centimeters; #Set units
-defaults write ~/Library/Preferences/.GlobalPreferences AppleMetricUnits -bool YES; #Set metric
-defaults write ~/Library/Preferences/.GlobalPreferences AppleMiniaturizeOnDoubleClick -bool NO;
-defaults write ~/Library/Preferences/.GlobalPreferences NSPreferredWebServices '{
+defaults write -g ~/Library/Preferences/.GlobalPreferences AppleICUDateFormatStrings '{3 = "MMMM dd, y";}'; #Set date fmt
+defaults write -g ~/Library/Preferences/.GlobalPreferences AppleICUForce24HourTime -bool YES; #Set 24 hr time
+defaults write -g ~/Library/Preferences/.GlobalPreferences AppleLanguages "(en, es)"; #Set languages
+defaults write -g ~/Library/Preferences/.GlobalPreferences AppleMeasurementUnits Centimeters; #Set units
+defaults write -g ~/Library/Preferences/.GlobalPreferences AppleMetricUnits -bool YES; #Set metric
+defaults write -g ~/Library/Preferences/.GlobalPreferences AppleMiniaturizeOnDoubleClick -bool NO;
+defaults write -g ~/Library/Preferences/.GlobalPreferences NSPreferredWebServices '{
   NSWebServicesProviderWebSearch = {
     NSDefaultDisplayName = Google;
     NSProviderIdentifier = "com.google.www";
     };
   }'; #Set Google as search
-defaults write ~/Library/Preferences/.GlobalPreferences NSRecentDocumentsLimit -int 5; #Limit recents
+defaults write -g ~/Library/Preferences/.GlobalPreferences NSRecentDocumentsLimit -int 5; #Limit recents
 defaults write com.apple.menuextra.battery ShowPercent "YES";
 defaults write com.apple.menuextra.clock '{
     DateFormat = "EEE HH:mm";
@@ -37,8 +37,8 @@ defaults write com.apple.menuextra.clock '{
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true;
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1;
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1;
-defaults write ~/Library/Preferences/.GlobalPreferences "com.apple.mouse.scaling" -int 3;
-defaults write ~/Library/Preferences/.GlobalPreferences "com.apple.trackpad.scaling" -int 3;
+defaults write -g ~/Library/Preferences/.GlobalPreferences "com.apple.mouse.scaling" -int 3;
+defaults write -g ~/Library/Preferences/.GlobalPreferences "com.apple.trackpad.scaling" -int 3;
 defaults write com.apple.AppleMultitouchTrackpad ActuateDetents -bool YES;
 defaults write com.apple.AppleMultitouchTrackpad Clicking -bool YES;
 defaults write com.apple.AppleMultitouchTrackpad DragLock -bool NO;
