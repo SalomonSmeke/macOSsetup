@@ -4,6 +4,9 @@
 ##Safari is way too complicated. So is finder window. Terminal is easier to import as a file.
 
 #General
+sudo pmset -a sms 0; # Disable the sudden motion sensor as it’s not useful for SSDs
+sudo nvram SystemAudioVolume=" ";
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false;
 defaults write -g AppleAquaColorVariant -int 6; #Graphite colors
 defaults write /Library/Preferences/.GlobalPreferences AppleLocale "en_MX@currency=USD"; #Correct locale
 defaults write ~/Library/Preferences/.GlobalPreferences AppleLocale "en_MX@currency=USD";
@@ -32,6 +35,9 @@ defaults write com.apple.menuextra.clock '{
 
 
 #Mice preferences
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true;
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1;
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1;
 defaults write ~/Library/Preferences/.GlobalPreferences "com.apple.mouse.scaling" -int 3;
 defaults write ~/Library/Preferences/.GlobalPreferences "com.apple.trackpad.scaling" -int 3;
 defaults write com.apple.AppleMultitouchTrackpad ActuateDetents -bool YES;
@@ -104,6 +110,18 @@ defaults write com.apple.finder DesktopViewSettings '{
 }';
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool YES;
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool YES;
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool YES;
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf";
+
+#Safari Dev Mode
+defaults write com.apple.Safari IncludeInternalDebugMenu -bool true;
+defaults write com.apple.Safari IncludeDevelopMenu -bool true;
+defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true;
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true;
+killall "Safari" > /dev/null 2>&1;
+
+#Time Machine
+hash tmutil &> /dev/null && sudo tmutil disablelocal;
 
 #Dock
 defaults write com.apple.dock largesize -int 55;
@@ -115,7 +133,9 @@ defaults write com.apple.dock persistent-apps -array;
 #Reset
 killall Dock 2>/dev/null;
 killall Finder 2>/dev/null;
-
+killall mds > /dev/null 2>&1;
+sudo mdutil -i on / > /dev/null;
+sudo mdutil -E / > /dev/null;
 # https://github.com/timsutton/osx-vm-templates/blob/ce8df8a7468faa7c5312444ece1b977c1b2f77a4/scripts/xcode-cli-tools.sh
 touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress;
 PROD=$(softwareupdate -l |
@@ -172,4 +192,5 @@ cp './config/atom.config.cson' ~/.atom/;
 #zshrc
 cp './dotfiles/.zshrc' ~;
 
-#App Store Apps: The Unarchiver Byword... maybe
+echo "Please remember to install: The Unarchiver. Also set safari and finder to how you like em. (Screenies Available)";
+echo "Additionally, set the Terminal theme to the one in /term";
