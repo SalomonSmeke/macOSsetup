@@ -159,6 +159,7 @@ brew install \
 ;
 
 brew cask install \
+  arduino \
   imageoptim \
   eclipse-java \
   firefox \
