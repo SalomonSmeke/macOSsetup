@@ -1,0 +1,32 @@
+"*":
+  "activate-power-mode":
+    autoToggle: false
+    particles:
+      size: {}
+  core:
+    disabledPackages: [
+      "metrics"
+      "language-clojure"
+      "language-php"
+      "language-perl"
+      "language-mustache"
+      "welcome"
+      "language-ruby-on-rails"
+      "language-ruby"
+      "language-go"
+      "minimap"
+    ]
+    themes: [
+      "one-dark-ui"
+      "chester-atom-syntax"
+    ]
+  editor:
+    fontSize: 16
+    invisibles: {}
+    showIndentGuide: true
+  "exception-reporting":
+    userId: "963bf364-164c-9f9e-d006-327d18f1ab72"
+  minimap: {}
+  "one-dark-ui": {}
+  welcome:
+    showOnStartup: false
