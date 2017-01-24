@@ -85,3 +85,4 @@ source $ZSH/oh-my-zsh.sh
 
 echo "Hello, Salomon"
 eval $(thefuck --alias)
+ssh-add -K
