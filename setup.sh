@@ -85,6 +85,8 @@ git config --global core.editor "atom --wait";
 git config --global user.name "Salomon Smeke";
 git config --global user.email "ssmeke@luc.edu";
 git config --global push.default simple;
-ln -s './config/atom.config.cson' ~/.atom/;
-ln -s './dotfiles/.zshrc' ~;
+path_to_atom=$(pwd)'/config/atom.config.cson';
+path_to_zshrc=$(pwd)'/dotfiles/.zshrc';
+ln -s $path_to_atom ~/.atom;
+ln -s $path_to_zshrc ~;
 echo "Cheers off you go."
