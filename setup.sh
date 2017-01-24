@@ -4,15 +4,15 @@ sudo pmset -a sms 0;
 sudo nvram SystemAudioVolume=" ";
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false;
 defaults write -g AppleAquaColorVariant -int 6;
-defaults write -g ~/Library/Preferences/.GlobalPreferences AppleLocale "en_MX@currency=USD";
-defaults write -g ~/Library/Preferences/.GlobalPreferences AppleFirstWeekday "{gregorian=2;}";
-defaults write -g ~/Library/Preferences/.GlobalPreferences AppleHighlightColor "1.000000 0.493272 0.473998";
+defaults write ~/Library/Preferences/.GlobalPreferences AppleLocale "en_MX@currency=USD";
+defaults write ~/Library/Preferences/.GlobalPreferences AppleFirstWeekday "{gregorian=2;}";
+defaults write ~/Library/Preferences/.GlobalPreferences AppleHighlightColor "1.000000 0.493272 0.473998";
 defaults write com.apple.systempreferences AppleOtherHighlightColor "1.000000 0.493272 0.473998";
-defaults write -g ~/Library/Preferences/.GlobalPreferences AppleICUDateFormatStrings '{3 = "MMMM dd, y";}';
-defaults write -g ~/Library/Preferences/.GlobalPreferences AppleICUForce24HourTime -bool YES;
-defaults write -g ~/Library/Preferences/.GlobalPreferences AppleMeasurementUnits Centimeters; #Set units
-defaults write -g ~/Library/Preferences/.GlobalPreferences AppleMetricUnits -bool YES; #Set metric
-defaults write -g ~/Library/Preferences/.GlobalPreferences NSPreferredWebServices '{
+defaults write ~/Library/Preferences/.GlobalPreferences AppleICUDateFormatStrings '{3 = "MMMM dd, y";}';
+defaults write ~/Library/Preferences/.GlobalPreferences AppleICUForce24HourTime -bool YES;
+defaults write ~/Library/Preferences/.GlobalPreferences AppleMeasurementUnits Centimeters; #Set units
+defaults write ~/Library/Preferences/.GlobalPreferences AppleMetricUnits -bool YES; #Set metric
+defaults write ~/Library/Preferences/.GlobalPreferences NSPreferredWebServices '{
   NSWebServicesProviderWebSearch = {
     NSDefaultDisplayName = Google;
     NSProviderIdentifier = "com.google.www";
@@ -25,8 +25,8 @@ defaults write com.apple.menuextra.clock '{
 }';
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1;
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1;
-defaults write -g ~/Library/Preferences/.GlobalPreferences "com.apple.mouse.scaling" -int 3;
-defaults write -g ~/Library/Preferences/.GlobalPreferences "com.apple.trackpad.scaling" -int 3;
+defaults write ~/Library/Preferences/.GlobalPreferences "com.apple.mouse.scaling" -int 3;
+defaults write ~/Library/Preferences/.GlobalPreferences "com.apple.trackpad.scaling" -int 3;
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool YES;
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool YES;
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool YES;
@@ -85,6 +85,6 @@ git config --global core.editor "atom --wait";
 git config --global user.name "Salomon Smeke";
 git config --global user.email "ssmeke@luc.edu";
 git config --global push.default simple;
-cp './config/atom.config.cson' ~/.atom/;
-cp './dotfiles/.zshrc' ~;
+ln -s './config/atom.config.cson' ~/.atom/;
+ln -s './dotfiles/.zshrc' ~;
 echo "Cheers off you go."
