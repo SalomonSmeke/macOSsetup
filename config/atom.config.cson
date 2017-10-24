@@ -2,8 +2,12 @@
   "activate-power-mode":
     autoToggle: false
     particles:
-      size: {}
+      colours:
+        type: "random"
+      size:
+        max: 7
   core:
+    telemetryConsent: "limited"
     disabledPackages: [
       "metrics"
       "language-clojure"
@@ -21,12 +25,14 @@
       "chester-atom-syntax"
     ]
   editor:
-    fontSize: 16
-    invisibles: {}
-    showIndentGuide: true
+    fontSize: 15
   "exception-reporting":
     userId: "963bf364-164c-9f9e-d006-327d18f1ab72"
-  minimap: {}
-  "one-dark-ui": {}
+  "linter-eslint": {}
+  "linter-pylint":
+    disableTimeout: true
+    rcFile: "%p/pylintrc"
+  "linter-ui-default":
+    panelHeight: 125
   welcome:
     showOnStartup: false
