@@ -58,7 +58,6 @@ softwareupdate -i "$PROD";
 brew install \
   zsh \
   sl \
-  cloc \
   thefuck \
   tmux \
   tree \
@@ -76,10 +75,9 @@ brew cask install \
   slack \
   sourcetree \
   steam \
-  flux \
   transmission \
 ;
-apm install activate-power-mode chester-atom-syntax atom-handlebars;
+apm install activate-power-mode chester-atom-syntax atom-handlebars atom-material-syntax autocomplete-json autocomplete-modules busy-signal intentions linter linter-coffeelint linter-csslint linter-eslint linter-markdown linter-pylint linter-tidy linter-ui-default;
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)";
 git config --global core.editor "atom --wait";
 git config --global user.name "Salomon Smeke";
