@@ -5,7 +5,7 @@ export ZSH=/Users/Salomon/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="sorin"
+ ZSH_THEME="sorin"
 
 # Uncomment the following line to use case-sensitive completion.
  CASE_SENSITIVE="false"
@@ -62,11 +62,7 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
- if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='nano'
- else
-   export EDITOR='vim'
- fi
+export EDITOR='atom'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -85,4 +81,10 @@ source $ZSH/oh-my-zsh.sh
 
 echo "Hello, Salomon"
 eval $(thefuck --alias)
+alias docker-up="docker-compose -f /Users/salomon/4c/voxsupFrontend2/dockerfiles/dev_env/docker-compose.yml up"
+alias docker-run="docker-compose -f /Users/salomon/4c/voxsupFrontend2/dockerfiles/dev_env/docker-compose.yml run voxsup_dev"
+alias docker-bash="docker-compose -f /Users/salomon/4c/voxsupFrontend2/dockerfiles/dev_env/docker-compose.yml run voxsup_dev bash"
+alias docker-build="docker-compose -f /Users/salomon/4c/voxsupFrontend2/dockerfiles/dev_env/docker-compose.yml build"
+alias docker-db="docker-compose -f /Users/salomon/4c/voxsupFrontend2/dockerfiles/dev_env/docker-compose.yml run voxsup_dev dockerfiles/dev_env/setup.bash"
+
 ssh-add -K

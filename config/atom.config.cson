@@ -7,7 +7,6 @@
       size:
         max: 7
   core:
-    telemetryConsent: "limited"
     disabledPackages: [
       "metrics"
       "language-clojure"
@@ -20,9 +19,10 @@
       "language-go"
       "minimap"
     ]
+    telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
-      "chester-atom-syntax"
+      "atom-material-syntax"
     ]
   editor:
     fontSize: 15
@@ -34,5 +34,6 @@
     rcFile: "%p/pylintrc"
   "linter-ui-default":
     panelHeight: 125
+    showPanel: true
   welcome:
     showOnStartup: false
